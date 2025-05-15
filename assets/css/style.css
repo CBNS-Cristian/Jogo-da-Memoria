@@ -51,6 +51,7 @@ main button:hover{
     transform: rotateY(180deg);
     transition: 0.3s;
     opacity: 1;
+    cursor: pointer;
 }
 .quadrado img{
     max-width: 64px;
