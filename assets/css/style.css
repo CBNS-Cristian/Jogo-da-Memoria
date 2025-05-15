@@ -1,0 +1,84 @@
+main{
+     background-color: blueviolet;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 20px;
+     user-select: none;
+}
+main h1{
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+main button{
+    background: linear-gradient(#fffb00, #d9ff00);
+    border: none;
+    width: 200px;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+}
+main button:hover{
+    background: linear-gradient(#fffb20, #b5d402);
+}
+.jogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 750px;
+}
+.quadrado{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    transition: 0.3s;
+    opacity: 1;
+}
+.quadrado img{
+    max-width: 64px;
+}
+.quadrado::after{
+    content: "";
+    position:absolute;
+    opacity: 1;
+    inset: 0;
+    background: #404040;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.3s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.quadrado.quadradoAberto{
+    transform: rotateY(0deg);
+    transition: 0.3s;
+}
+.quadradoCorreto{
+    background-color: black;
+}
+.quadradoAberto::after,
+.quadradoCorreto:after{
+    opacity: 0;
+    transform: rotateY(0deg);
+    transition: 0.3s;
+}
+
